@@ -50,12 +50,12 @@ function postTrainer(trainer) {
         releaseButton.setAttribute("data-pokemon-id", trainer.pokemons[i].id);
         releaseButton.innerText = "Release";
         releaseButton.addEventListener('click', function () {
-            APIDeletePokemon(trainer.pokemons[i].id)
+            APIDeletePokemon(trainer.pokemons[i].id, pokemonList)
         });
         let nickname = trainer.pokemons[i].nickname;
         let species = trainer.pokemons[i].species;
         pokemonList.innerText = `${nickname} (${species})`;
-        pokemonList.append(releaseButton);
+        pokemonList.appendChild(releaseButton);
         ul.append(pokemonList)
     }
 
@@ -81,8 +81,9 @@ function addPokemon(trainerID) {
 
 }
 
-function APIDeletePokemon(id) {
+function APIDeletePokemon(id, pokemonList) {
     fetch(`http://localhost:3000/pokemons/${id}`, {
         method: "DELETE"
     });
+    pokemonList.remove();
 }
