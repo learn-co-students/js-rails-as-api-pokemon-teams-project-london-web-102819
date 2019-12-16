@@ -78,8 +78,14 @@ function addPokemon(e) {
         })
       };
 
-    fetch(POKEMONS_URL, configObj).then(resp => resp.json()).then(createPokemon).catch(console.log);
+    fetch(POKEMONS_URL, configObj).then(resp => resp.json()).then(createPokemon).catch(displayErrorMessage);
 }
+
+function displayErrorMessage(error) {
+    const erm = document.querySelector('#modal');
+    erm.classList.remove("hidden");
+    setTimeout(function() {erm.classList.add("hidden")}, 5000);
+  }
 
 
 //<div class="card" data-id="1"><p>Prince</p>
