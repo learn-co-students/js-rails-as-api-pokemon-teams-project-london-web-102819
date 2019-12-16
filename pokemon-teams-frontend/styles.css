@@ -45,7 +45,7 @@ body {
   }
   
   button {
-    font-size: .65em;
+    font-size: .61em;
     color: #fff;
     background-color: green;
     border-radius: 10px;
@@ -53,7 +53,7 @@ body {
   
   button.release {
     float: right;
-    background-color: #E1332D;
+    background-color: red;
   }
   
   @media only screen and (min-width: 500px) {
