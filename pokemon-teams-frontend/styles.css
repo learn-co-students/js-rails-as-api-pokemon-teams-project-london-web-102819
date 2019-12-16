@@ -45,15 +45,37 @@ body {
   }
   
   button {
-    font-size: .65em;
+    font-size: .61em;
     color: #fff;
     background-color: green;
     border-radius: 10px;
   }
+
+  #modal {
+    border-radius: 10px;
+    background-color: maroon;
+    color: white;
+  
+    margin: 1em;
+    padding: 1em;
+  
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  #modal p {
+    margin-bottom: 0;
+  }
+
+  .hidden {
+    visibility: hidden;
+  }
   
   button.release {
     float: right;
-    background-color: #E1332D;
+    background-color: red;
   }
   
   @media only screen and (min-width: 500px) {
